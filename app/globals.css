@@ -1,26 +1,71 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Holst — primary brown two-tone family */
+  --color-espresso: #2b1608;
+  --color-cocoa: #5c3310;
+  --color-caramel: #96551a;
+  --color-honey: #c9832b;
+  --color-sand: #e5a94f;
+  --color-cream: #fdefd6;
+  --color-porcelain: #fffaf3;
+  --color-ink: #2b1d18;
+
+  /* Coral — kept as the single accent/action color */
+  --color-coral: #fea38e;
+  --color-coral-dark: #f3806b;
+
+  --gradient-dark: linear-gradient(140deg, var(--color-cocoa) 0%, var(--color-espresso) 100%);
+  --gradient-warm: linear-gradient(160deg, var(--color-cream) 0%, var(--color-porcelain) 100%);
+  --gradient-sand: linear-gradient(135deg, var(--color-honey) 0%, var(--color-sand) 100%);
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --color-espresso: var(--color-espresso);
+  --color-cocoa: var(--color-cocoa);
+  --color-caramel: var(--color-caramel);
+  --color-honey: var(--color-honey);
+  --color-sand: var(--color-sand);
+  --color-cream: var(--color-cream);
+  --color-porcelain: var(--color-porcelain);
+  --color-ink: var(--color-ink);
+  --color-coral: var(--color-coral);
+  --color-coral-dark: var(--color-coral-dark);
+  --font-display: var(--font-heading);
+  --font-sans: var(--font-body);
+  --font-accent: var(--font-accent);
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--gradient-warm);
+  color: var(--color-ink);
+  font-family: var(--font-body);
+}
+
+.bg-gradient-dark {
+  background-image: var(--gradient-dark);
+}
+
+.bg-gradient-sand {
+  background-image: var(--gradient-sand);
+}
+
+@keyframes float-slow {
+
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+.animate-float-slow {
+  animation: float-slow 6s ease-in-out infinite;
+}
+
+.animate-float-slower {
+  animation: float-slow 9s ease-in-out infinite;
 }
