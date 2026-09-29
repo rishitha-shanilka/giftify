@@ -28,6 +28,10 @@ const cormorant = Cormorant_Garamond({
 export const metadata: Metadata = {
   title: "Giftify — Thoughtfully Curated Gifts",
   description: "Find something worth remembering for every occasion.",
+
+  verification: {
+    google: "HkWXmPTxPFIPf9BAYbSwxJ7Cz9FFYEakM_UUO7TTEqw",
+  },
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
